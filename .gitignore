@@ -1,5 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+PhoenixWeb/__pycache__/
+PhoenixBrog/__pycache__/
 *.py[cod]
 *$py.class
 
@@ -130,3 +132,5 @@ dmypy.json
 
 # ./git/info/exclude
 *.code-workspace
+
+*.pyc
