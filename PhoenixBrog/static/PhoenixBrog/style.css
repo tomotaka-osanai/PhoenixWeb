@@ -1,40 +1,58 @@
 /* グローバルスタイル */
-body {
-  background-color: #1c1c1e;
-  color: #e5e5e5;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
+/* PC向けスタイル */
+* {
+  margin: 0;
+  padding: 0px;
+}
+@media (min-width: 768px) {
+  body {
+    position: relative;
+    height: 100%;
+    background-color: #f8f8f8;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    background-color: #f8f8f8;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  /* ハンバーガーメニュー */
+  .hamburger {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: 1px solid #cccccc2f;
+    border-radius: 5px;
+  }
+
+  .hamburger-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+  /* ハンバーガーアイコンの3本の線のスタイル */
+  .hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+  }
 }
 
 a {
-  color: #e5e5e5;
+  color: #333333;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-}
-
-/* ハンバーガーメニュー */
-.hamburger {
-  display: inline-block;
-  cursor: pointer;
-  padding: 10px 15px;
-  border: 1px solid #cccccc2f;
-  border-radius: 5px;
-}
-
-.hamburger-menu {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-/* ハンバーガーアイコンの3本の線のスタイル */
-.hamburger .line {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  margin: 5px 0;
 }
 
 /* メニューのスタイル */
@@ -50,11 +68,12 @@ a:hover {
   padding: 10px;
   transition: right 0.3s ease-out;
 }
+
 /* メニューのリンクのスタイル */
 .menu a {
   display: block;
   padding: 5px 0;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #979eff;
   color: #333;
   text-decoration: none;
   transition: color 0.3s ease-out;
@@ -71,12 +90,19 @@ a:hover {
 }
 
 /* ヘッダー */
+@media (min-width: 768px) {
+  h1 {
+    max-width: 960px; /* 最大幅を設定 */
+    margin: 0 auto; /* 左右中央寄せ */
+  }
+}
+
 h1 {
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 3rem; /* フォントサイズ */
-  color: #fff; /* テキストカラー */
+  color: #333333; /* テキストカラー */
   text-align: left; /* テキストの中央揃え */
-  margin-top: 2rem; /* 上部の余白 */
+  padding-top: 2rem; /* 上部の余白 */
   letter-spacing: 0.1rem; /* 文字の間隔 */
   /* text-shadow: 3px 3px 0px #555; テキストの影 */
 }
@@ -91,6 +117,20 @@ h1 {
 
 /* ナビゲーションバー */
 /* ナビゲーションバーの基本スタイル */
+.nav-menu-cover {
+  background-color: #333;
+  border-bottom: 1px solid #555;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .nav-menu-inner {
+    max-width: 960px; /* 最大幅を設定 */
+    margin: 0 auto; /* 左右中央寄せ */
+    padding: 0 20px; /* 左右の余白を追加 */
+  }
+}
+
 .nav-menu {
   display: flex;
   /* justify-content: space-between; */
@@ -98,9 +138,6 @@ h1 {
   list-style: none;
   padding: 0;
   margin: 0;
-  background-color: #1c1c1e;
-  border-bottom: 1px solid #555;
-  font-size: 1rem;
 }
 
 .nav-menu li {
@@ -108,7 +145,7 @@ h1 {
 }
 
 .nav-menu a {
-  color: #ffffff;
+  color: #f5f5f5;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   padding: 0 1rem;
@@ -118,9 +155,9 @@ h1 {
 
 .nav-menu a:hover,
 .nav-menu a:focus {
-  color: #fff;
-  background-color: #333;
-  border-color: #333;
+  color: #333333;
+  background-color: #f5f5f5;
+  border-color: #f5f5f5;
   outline: none;
 }
 
@@ -130,17 +167,31 @@ h1 {
 header nav {
   justify-content: flex-end;
 }
-
 /* メイン */
+@media (min-width: 768px) {
+  main {
+    max-width: 960px; /* 最大幅を設定 */
+    margin: 0 auto; /* 左右中央寄せ */
+    padding: 0 20px; /* 左右の余白を追加 */
+  }
+}
+
 main {
-  padding: 20px;
+  padding: 20px; /* 左右の余白を追加 */
+  opacity: 1;
+}
+
+.box-bg-img {
+  background-image: url(./img/desk-opacity.png);
+  background-size: cover;
 }
 
 article {
-  background-color: #26262a;
+  background-color: #f5f5f5;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 article header {
@@ -164,7 +215,8 @@ article p {
 
 /* フッター */
 footer {
-  background-color: #26262a;
+  background-color: #333;
+  color: #f5f5f5;
   padding: 20px;
   text-align: center;
   border-top: 1px solid #555;

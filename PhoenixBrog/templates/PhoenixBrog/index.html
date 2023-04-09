@@ -4,6 +4,7 @@
   <head>
     <title>ブログタイトル</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="{% static 'PhoenixBrog/style.css' %}" />
     <link
       href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap"
@@ -11,36 +12,42 @@
     />
   </head>
   <body>
-    <header>
-      <h1>ブログタイトル</h1>
-      <ul class="nav-menu">
-        <li><a href="#">ホーム</a></li>
-        <li><a href="#">記事一覧</a></li>
-        <li><a href="#">お問い合わせ</a></li>
-      </ul>
-      <div class="hamburger-menu">
-        <div class="hamburger" onclick="toggleMenu()">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+    <div class="box-bg-img">
+      <header>
+        <h1>ブログタイトル</h1>
+        <div class="nav-menu-cover">
+          <div class="nav-menu-inner">
+            <ul class="nav-menu">
+              <li><a href="#">ホーム</a></li>
+              <li><a href="#">記事一覧</a></li>
+              <li><a href="#">お問い合わせ</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="menu" id="menu">
-          <a href="#">ホーム</a>
-          <a href="#">記事一覧</a>
-          <a href="#">お問い合わせ</a>
+        <div class="hamburger-menu">
+          <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <div class="menu" id="menu">
+            <a href="#">ホーム</a>
+            <a href="#">記事一覧</a>
+            <a href="#">お問い合わせ</a>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <main>
-      <article>
-        <header>
-          <h2>記事タイトル</h2>
-          <p>投稿日: 2023年4月2日 | カテゴリー: サンプル</p>
-        </header>
-        <p>記事の内容をここに入力してください。</p>
-      </article>
-    </main>
+      <main>
+        <article>
+          <header>
+            <h2>記事タイトル</h2>
+            <p>投稿日: 2023年4月2日 | カテゴリー: サンプル</p>
+          </header>
+          <p>記事の内容をここに入力してください。</p>
+        </article>
+      </main>
+    </div>
     <footer>
       <p>© 2023 ブログタイトル</p>
     </footer>
