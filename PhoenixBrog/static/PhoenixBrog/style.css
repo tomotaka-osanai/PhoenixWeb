@@ -98,13 +98,14 @@ a:hover {
 }
 
 h1 {
-  font-family: "Roboto", "Arial", sans-serif;
-  font-size: 3rem; /* フォントサイズ */
-  color: #333333; /* テキストカラー */
-  text-align: left; /* テキストの中央揃え */
-  padding-top: 2rem; /* 上部の余白 */
-  letter-spacing: 0.1rem; /* 文字の間隔 */
-  /* text-shadow: 3px 3px 0px #555; テキストの影 */
+  font-family: "Pacifico", cursive;
+  font-size: 36px;
+  color: #2c3e50;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  letter-spacing: 4px;
+  text-align: left;
+  padding-top: 4px; /* 上部の余白 */
+  padding-bottom: 4px; /* 下部の余白 */
 }
 
 .toggle:before {
@@ -170,7 +171,7 @@ header nav {
 /* メイン */
 @media (min-width: 768px) {
   main {
-    max-width: 960px; /* 最大幅を設定 */
+    max-width: 730px; /* 最大幅を設定 */
     margin: 0 auto; /* 左右中央寄せ */
     padding: 0 20px; /* 左右の余白を追加 */
   }

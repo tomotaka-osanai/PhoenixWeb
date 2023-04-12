@@ -1,8 +1,7 @@
 from django.shortcuts import render
-from django.template import loader
-from django.http import HttpResponse
-
+from .models import Article
 
 def index(request):
-    context = {'':''}
+    latest_brog_article = Article.objects.order_by('created_at')[0]
+    context = {'article':latest_brog_article}
     return render(request, 'PhoenixBrog/index.html', context)
