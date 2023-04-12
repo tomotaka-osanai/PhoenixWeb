@@ -3,18 +3,37 @@ version: "3"
 services:
   db:
     image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: develop
-      POSTGRES_USER: develop
-      POSTGRES_PASSWORD: develop
+      - "POSTGRES_DB=postgres"
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=postgres"
+
+  pgadmin4:
+    image: dpage/pgadmin4
+    ports:
+      - 8888:80
+    volumes:
+      - pgadmin4_data:/var/lib/pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: tomotaka-osanai.524@outlook.jp
+      PGADMIN_DEFAULT_PASSWORD: password
+    depends_on:
+      - db
+
   web:
     build:
       context: .
       dockerfile: Dockerfile
     command: python manage.py runserver 0.0.0.0:8080
     volumes:
-      - .:/app
+      - .:/code
     ports:
       - "8080:8080"
     depends_on:
       - db
+
+volumes:
+  postgres_data:
+  pgadmin4_data:
