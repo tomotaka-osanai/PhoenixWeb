@@ -2,7 +2,7 @@
 /* PC向けスタイル */
 * {
   margin: 0;
-  padding: 0px;
+  padding: 0;
 }
 @media (min-width: 768px) {
   body {
@@ -108,6 +108,14 @@ h1 {
   padding-bottom: 4px; /* 下部の余白 */
 }
 
+h2 {
+  font-size: 18px;
+  color: #2c3e50;
+  text-align: left;
+  padding-top: 4px; /* 上部の余白 */
+  padding-bottom: 4px; /* 下部の余白 */
+}
+
 .toggle:before {
   transform: translateY(-5px) rotate(45deg);
 }
@@ -191,8 +199,6 @@ article {
   background-color: #f5f5f5;
   padding: 20px;
   border-radius: 10px;
-  margin-bottom: 20px;
-  margin-top: 20px;
 }
 
 article header {
@@ -212,6 +218,94 @@ article header p {
 article p {
   font-size: 16px;
   line-height: 1.5;
+}
+
+/* Swiper */
+.swiper-container-parent {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .swiper-container {
+    max-width: 730px;
+    height: 250px;
+    overflow: hidden;
+  }
+}
+.swiper-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .swiper-slide {
+    width: calc((100% - 40px) / 3);
+  }
+}
+.swiper-slide {
+  width: 230px !important;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.card h2 {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  margin: 10px;
+}
+
+.card a {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.card a:hover {
+  background-color: #0069d9;
+}
+
+/* 前へ次への矢印カスタマイズ */
+.swiper-button-prev,
+.swiper-button-next {
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+}
+/* 前へ次への矢印カスタマイズ */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  height: 50px;
+  margin: auto;
+  width: 50px;
 }
 
 /* フッター */

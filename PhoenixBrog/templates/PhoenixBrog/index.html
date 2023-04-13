@@ -10,6 +10,10 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Pacifico"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9.1.1/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <header>
@@ -39,18 +43,98 @@
 
     <div class="box-bg-img">
       <main>
+        <!-- おすすめ記事 -->
+        <h2>新着の投稿</h2>
         <article>
           <header>
-            <h2>{{ article.title}}</h2>
+            <h3>{{ article.title}}</h3>
             <p>投稿日: {{ article.created_at }} | カテゴリー: サンプル</p>
           </header>
           <p>{{ article.body }}</p>
         </article>
+        <!-- スワイパー一覧 -->
+        <h2>人気の記事</h2>
+        <div class="swiper-container-parent">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="card">
+                  <img src="https://example.com/image1.jpg" alt="Article 1" />
+                  <h3>Article 1</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <img src="https://example.com/image2.jpg" alt="Article 2" />
+                  <h3>Article 2</h3>
+                  <p>
+                    Sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <img src="https://example.com/image3.jpg" alt="Article 3" />
+                  <h2>Article 3</h2>
+                  <p>
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <img src="https://example.com/image1.jpg" alt="Article 1" />
+                  <h2>Article 1</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <img src="https://example.com/image2.jpg" alt="Article 2" />
+                  <h2>Article 2</h2>
+                  <p>
+                    Sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <img src="https://example.com/image3.jpg" alt="Article 3" />
+                  <h2>Article 3</h2>
+                  <p>
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+
+              <!-- 他の記事カードを続けて追加 -->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
       </main>
     </div>
     <footer>
       <p>© 2023 PhoenixBlog</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.4.min.js"></script>
     <script src="{% static 'PhoenixBrog/script.js' %}"></script>
   </body>
 </html>
