@@ -181,13 +181,13 @@ header nav {
   main {
     max-width: 730px; /* 最大幅を設定 */
     margin: 0 auto; /* 左右中央寄せ */
-    padding: 20px 0; /* 左右の余白を追加 */
+    padding: 20px 0px; /* 左右の余白を追加 */
   }
 }
 
 main {
   opacity: 1;
-  padding: 20px; /* 左右の余白を追加 */
+  padding: 20px 10px; /* 左右の余白を追加 */
 }
 
 .box-bg-img {
