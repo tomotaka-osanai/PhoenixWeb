@@ -43,7 +43,7 @@
 
     <div class="box-bg-img">
       <main>
-        <!-- おすすめ記事 -->
+        {# おすすめ記事 #}
         <h2>新着の投稿</h2>
         <article>
           <header>
@@ -52,77 +52,24 @@
           </header>
           <p>{{ article.body }}</p>
         </article>
-        <!-- スワイパー一覧 -->
+        {# スワイパー一覧 #}
         <h2>人気の記事</h2>
         <div class="swiper-container-parent">
           <div class="swiper-container">
             <div class="swiper-wrapper">
+              {% for pop_article in list %}
               <div class="swiper-slide">
                 <div class="card">
-                  <img src="https://example.com/image1.jpg" alt="Article 1" />
-                  <h3>Article 1</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-                  <a href="#">Read More</a>
+                  <div class="card-photo">
+                    <img src="https://picsum.photos/300/200" alt="Article 1" />
+                  </div>
+                  <div class="card-detail">
+                    <b>{{ pop_article.title|truncatechars:30 }}</b>
+                    <p>{{ pop_article.body|truncatechars:50 }}</p>
+                  </div>
                 </div>
               </div>
-              <div class="swiper-slide">
-                <div class="card">
-                  <img src="https://example.com/image2.jpg" alt="Article 2" />
-                  <h3>Article 2</h3>
-                  <p>
-                    Sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                  <a href="#">Read More</a>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                  <img src="https://example.com/image3.jpg" alt="Article 3" />
-                  <h2>Article 3</h2>
-                  <p>
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <a href="#">Read More</a>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                  <img src="https://example.com/image1.jpg" alt="Article 1" />
-                  <h2>Article 1</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-                  <a href="#">Read More</a>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                  <img src="https://example.com/image2.jpg" alt="Article 2" />
-                  <h2>Article 2</h2>
-                  <p>
-                    Sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                  <a href="#">Read More</a>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                  <img src="https://example.com/image3.jpg" alt="Article 3" />
-                  <h2>Article 3</h2>
-                  <p>
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <a href="#">Read More</a>
-                </div>
-              </div>
-
-              <!-- 他の記事カードを続けて追加 -->
+              {% endfor %}
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
