@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('PhoenixBrog', '0001_initial'),
+        ('PhoenixBlog', '0001_initial'),
     ]
 
     operations = [
@@ -50,6 +50,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='article',
             name='category',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='PhoenixBrog.category'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='PhoenixBlog.category'),
         ),
     ]

@@ -8,7 +8,7 @@ def index(request):
     latest_brog_article = Article.objects.order_by('created_at')[0]
     popular_blog_article = get_queryset()
     context = {'article':latest_brog_article, 'list':popular_blog_article}
-    return render(request, 'PhoenixBrog/index.html', context)
+    return render(request, 'PhoenixBlog/index.html', context)
 
 # 人気の記事を10記事取得
 def get_queryset():
