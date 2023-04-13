@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>PhoenixBlog</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="PhoenixBlog" />
+    <meta name="keywords" content="PhoenixBlog" />
+    <link rel="stylesheet" href="{% static 'PhoenixBlog/css/base.css' %}" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Pacifico" />
+    {% block extra_css %}
+    {% endblock extra_css %}
+  </head>
+  <body>
+    <header>
+      <h1>PhoenixBlog</h1>
+      <div class="nav-menu-cover">
+        <div class="nav-menu-inner">
+          <ul class="nav-menu">
+            <li>
+              <a href="{% url 'index' %}">ホーム</a>
+            </li>
+            <li>
+              <a href="{% url 'list' %}">記事一覧</a>
+            </li>
+            <li>
+              <a href="#">お問い合わせ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="hamburger-menu">
+        <div class="hamburger" onclick="toggleMenu()">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <div class="menu" id="menu">
+          <a href="#">ホーム</a>
+          <a href="#">記事一覧</a>
+          <a href="#">お問い合わせ</a>
+        </div>
+      </div>
+    </header>
+    <div class="box-bg-img">
+      <main>
+        {% block content %}
+        {% endblock content %}
+      </main>
+    </div>
+    <footer>
+      <p>© 2023 PhoenixBlog</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.4.min.js"></script>
+    <script src="{% static 'PhoenixBlog/js/base.js' %}"></script>
+  </body>
+</html>
