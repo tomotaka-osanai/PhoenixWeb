@@ -13,11 +13,9 @@
       <h3>{{ article.title }}</h3>
       <p>投稿日: {{ article.created_at }} | カテゴリー: サンプル</p>
     </header>
-    <div class="aritcle-content">
-      <p>
-        {{ article.body|truncatechars:210 }}<a href="{% url 'detail' content_id=article.id %}">続きを読む</a>
-      </p>
-    </div>
+    <p>
+      {{ article.body|truncatechars:210 }}<a href="{% url 'detail' content_id=article.id %}">続きを読む</a>
+    </p>
   </article>
   {# スワイパー一覧 #}
   <h2>人気の記事</h2>
