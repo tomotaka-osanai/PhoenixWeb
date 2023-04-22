@@ -11,10 +11,7 @@
         <div class="article-list">
           <div class="article-list-content">
             <h2>
-              {% comment %}
-        <a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a>
-              {% endcomment %}
-              <a href="">{{ post.title }}</a>
+              <a href="{% url 'detail' content_id=post.id %}">{{ post.title }}</a>
             </h2>
             <p>{{ post.updated_at }}</p>
           </div>

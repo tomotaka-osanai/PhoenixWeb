@@ -1,0 +1,9 @@
+.swiper-slide a:hover {
+  text-decoration: none;
+}
+
+article a,
+article a:hover {
+  text-decoration: none;
+  color: #888;
+}

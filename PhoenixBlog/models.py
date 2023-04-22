@@ -10,7 +10,7 @@ class Category(models.Model):
 class Contents(models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField()
-    category = models.IntegerField()
+    category = models.IntegerField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -25,7 +25,7 @@ class Article(models.Model):
     body = models.TextField()
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
-    category = models.IntegerField()
+    category = models.IntegerField(null=True)
     is_published = models.BooleanField(default=False)
 
     def __str__(self):
@@ -38,8 +38,8 @@ class ContentArticle(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.DecimalField(max_digits=10, decimal_places=2, null=True)
     image_url = models.CharField(max_length=255)
-    stock = models.IntegerField()
+    stock = models.IntegerField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

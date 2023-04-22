@@ -1,0 +1,82 @@
+div.box-bg-img {
+  background-color: #fff;
+  background-image: none;
+}
+
+/* メイン */
+@media (min-width: 768px) {
+  main {
+    max-width: 640px; /* 最大幅を設定 */
+    margin: 0 auto; /* 左右中央寄せ */
+    padding: 20px 0px; /* 左右の余白を追加 */
+  }
+}
+
+/* コンテンツタイトル */
+div.content-photo {
+  width: 100%;
+  margin: 20px 0 20px 0;
+}
+
+div.content-photo img {
+  max-width: 100%;
+  height: auto;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 記事本文 */
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* 記事タイトル */
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #555;
+}
+
+/* 目次全体のスタイル */
+.content-table {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* 目次見出しのスタイル */
+.content-table b {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.content-table ul {
+  list-style-type: none;
+}
+
+/* 目次リスト項目のスタイル */
+.content-table li {
+  margin: 5px 0;
+}
+
+/* 目次リンクのスタイル */
+.content-table li a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* 目次リンクにマウスを乗せたときのスタイル */
+.content-table li a:hover {
+  text-decoration: underline;
+}
