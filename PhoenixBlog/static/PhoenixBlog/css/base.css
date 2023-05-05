@@ -348,22 +348,17 @@ div.genre-wrapper {
   border-top: 1px solid #ccc;
 }
 
-.genre-toggle::after {
-  content: "＋"; /* アクティブ時は上向き矢印 */
-  margin-left: 5px;
-  font-size: 20px; /* フォントサイズを20pxに変更 */
-  font-weight: bold; /* フォントの太さを太字に変更 */
+.genre-toggle img {
+  /* アクティブ時は上向き矢印 */
+  transition: transform 0.25s ease-in-out;
 }
 
 .genre-toggle.active + .genre-list {
   display: block;
 }
 
-.genre-toggle.active::after {
-  content: "－"; /* デフォルトは下向き矢印 */
-  margin-left: 5px;
-  font-size: 20px; /* フォントサイズを20pxに変更 */
-  font-weight: bold; /* フォントの太さを太字に変更 */
+.genre-toggle.active img {
+  transform: rotate(180deg);
 }
 
 .genre-list li {

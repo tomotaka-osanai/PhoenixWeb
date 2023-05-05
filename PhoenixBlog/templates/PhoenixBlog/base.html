@@ -52,7 +52,11 @@
     </div>
     <div class="genre-wrapper">
       <span class="genre-toggle">
-        <b>ジャンルから記事を探す</b>
+        <b>カテゴリーから記事を探す</b>
+        <img src="{% static 'PhoenixBlog/img/toggle-icon.svg' %}"
+             height="12px"
+             width="12px"
+             alt="" />
       </span>
       <ul class="genre-list">
         {% for category in categories %}
