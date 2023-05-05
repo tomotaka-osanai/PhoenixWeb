@@ -4,9 +4,13 @@ from django.utils import timezone
 
 class Category(models.Model):
     category_name = models.CharField(max_length=255)
+    parent_category = models.IntegerField(null=True)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.category_name
+
 class Contents(models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField()
@@ -20,6 +24,7 @@ class Contents(models.Model):
     def get_popular_article(self):
         # 現在日時より過去の記事の中からランダムに10件を取得
         return self.objects.filter(updated_at__lte=timezone.now()).order_by('?')[:10]
+
 class Article(models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField()
@@ -35,6 +40,7 @@ class ContentArticle(models.Model):
     article = models.IntegerField()
     class Meta:
         unique_together = ('content', 'article')
+
 class Product(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
