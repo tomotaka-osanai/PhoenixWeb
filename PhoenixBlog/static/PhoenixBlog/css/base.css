@@ -46,12 +46,12 @@
   }
 }
 
-a {
+main a {
   color: #333333;
   text-decoration: none;
 }
 
-a:hover {
+main a:hover {
   text-decoration: underline;
 }
 
@@ -325,6 +325,78 @@ article p {
   height: 50px;
   margin: auto;
   width: 50px;
+}
+
+/* ジャンルリスト */
+div.genre-wrapper {
+  max-width: 730px;
+  margin: 0 auto;
+}
+
+.genre-list {
+  max-width: 730px;
+  display: none;
+}
+
+.genre-toggle {
+  display: flex; /* 要素を横並びにする */
+  justify-content: space-between; /* 要素を左右に配置する */
+  align-items: center; /* 要素を中央に揃える */
+  cursor: pointer;
+  padding-top: 10px; /* 上に10pxの余白をつける */
+  padding-bottom: 10px; /* 下に10pxの余白をつける */
+  border-top: 1px solid #ccc;
+}
+
+.genre-toggle::after {
+  content: "＋"; /* アクティブ時は上向き矢印 */
+  margin-left: 5px;
+  font-size: 20px; /* フォントサイズを20pxに変更 */
+  font-weight: bold; /* フォントの太さを太字に変更 */
+}
+
+.genre-toggle.active + .genre-list {
+  display: block;
+}
+
+.genre-toggle.active::after {
+  content: "－"; /* デフォルトは下向き矢印 */
+  margin-left: 5px;
+  font-size: 20px; /* フォントサイズを20pxに変更 */
+  font-weight: bold; /* フォントの太さを太字に変更 */
+}
+
+.genre-list li {
+  font-size: 14px; /* 文字の大きさを小さくする */
+  color: #666; /* 文字の色を薄くする */
+
+  white-space: normal; /* 改行して表示 */
+  line-height: 1.8; /* 行間を開ける */
+  word-wrap: break-word; /* 画面からはみ出た場合に折り返す */
+  display: inline-block;
+}
+
+.genre-list a {
+  color: #666;
+  text-decoration: none;
+}
+
+.genre-list a:hover {
+  text-decoration: underline;
+}
+
+.genre-list li:not(:last-child)::after {
+  color: #666;
+  content: "|";
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+@media (max-width: 767px) {
+  div.genre-wrapper {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
 }
 
 /* フッター */

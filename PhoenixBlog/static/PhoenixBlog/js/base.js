@@ -1,6 +1,7 @@
 $(function () {
   initHunburger();
   initSwiper();
+  setEvent();
 });
 
 function toggleMenu() {
@@ -40,4 +41,16 @@ function initSwiper() {
       prevEl: ".swiper-button-prev",
     },
   });
+}
+
+function setEvent() {
+  $("span.genre-toggle")
+    .unbind("click")
+    .bind("click", function () {
+      if ($(this).hasClass("active")) {
+        $(this).removeClass("active");
+      } else {
+        $(this).addClass("active");
+      }
+    });
 }

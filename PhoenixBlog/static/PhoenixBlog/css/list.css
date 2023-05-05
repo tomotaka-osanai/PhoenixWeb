@@ -1,14 +1,10 @@
 /* ブログ記事一覧 */
-ul {
+ul.article-list {
   list-style: none;
   padding-left: 0;
 }
 
-li {
-  margin-bottom: 12px;
-}
-
-p {
+div.article-list p {
   font-size: 14px;
 }
 
@@ -17,6 +13,7 @@ li.article-list {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 6px;
   text-align: left;
+  margin-bottom: 12px;
 }
 
 @media (min-width: 768px) {
@@ -48,30 +45,27 @@ li.article-list {
   div.article-list {
     display: grid;
     grid-template-rows: auto auto;
+    grid-template-columns: 120px 1fr;
     grid-column-gap: 8px;
     grid-row-gap: 8px;
     padding: 8px;
   }
 
-  .article-list {
-    grid-template-columns: 120px 1fr;
-  }
-
-  .article-list-photo {
+  div.article-list-photo {
     height: auto;
     grid-row: 1;
     grid-column: 1;
   }
-  .article-list-photo > img {
+  div.article-list-photo > img {
     width: 120px;
     height: 90px;
   }
 
-  .article-list-content {
+  div.article-list-content {
     grid-row: 1;
     grid-column: 2;
   }
-  .article-list-detail {
+  div.article-list-detail {
     grid-row: 2;
     grid-column: 1/3;
   }

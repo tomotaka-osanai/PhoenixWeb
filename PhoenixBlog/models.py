@@ -1,5 +1,4 @@
 from django.db import models
-from django.views.generic import ListView
 from django.utils import timezone
 
 class Category(models.Model):
@@ -21,6 +20,7 @@ class Contents(models.Model):
     def __str__(self):
         return self.title
 
+    @classmethod
     def get_popular_article(self):
         # 現在日時より過去の記事の中からランダムに10件を取得
         return self.objects.filter(updated_at__lte=timezone.now()).order_by('?')[:10]

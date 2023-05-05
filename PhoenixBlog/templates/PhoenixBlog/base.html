@@ -50,6 +50,18 @@
         {% endblock content %}
       </main>
     </div>
+    <div class="genre-wrapper">
+      <span class="genre-toggle">
+        <b>ジャンルから記事を探す</b>
+      </span>
+      <ul class="genre-list">
+        {% for category in categories %}
+          <li>
+            <a href="#">{{ category.category_name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
     <footer>
       <p>© 2023 PhoenixBlog</p>
     </footer>
