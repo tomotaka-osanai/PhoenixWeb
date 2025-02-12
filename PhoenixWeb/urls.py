@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from rest_framework import routers
+from PhoenixBlog import views
+
+router = routers.DefaultRouter()
+router.register(r'PhoenixBlog', views.PhoenixBlogView, 'PhoenixBlog')
 
 urlpatterns = [
     path('PhoenixBlog/', include('PhoenixBlog.urls')),
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
 ]

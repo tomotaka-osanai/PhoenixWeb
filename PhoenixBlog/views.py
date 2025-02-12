@@ -1,9 +1,19 @@
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView
 from django.core.paginator import Paginator
-from .models import Contents, Article, ContentArticle, Category
+from .models import PhoenixBlog, Contents, Article, ContentArticle, Category
+
+from rest_framework import viewsets
+from .serializers import PhoenixBlogSerializer
 
 # 共通クラス
+
+
+class PhoenixBlogView(viewsets.ModelViewSet):
+    serializer_class = PhoenixBlogSerializer
+    queryset = PhoenixBlog.objects.all()
+
+
 class BaseView(TemplateView):
     # 共通処理を実装する場合はここに記述
     def get_context_data(self, **kwargs):
@@ -13,6 +23,8 @@ class BaseView(TemplateView):
         return context
 
 # トップページ表示クラス
+
+
 class IndexView(BaseView):
     template_name = 'PhoenixBlog/index.html'
 
@@ -25,6 +37,8 @@ class IndexView(BaseView):
         return context
 
 # 一覧ページ表示クラス
+
+
 class ListView(BaseView):
     template_name = 'PhoenixBlog/list.html'
 
@@ -40,6 +54,8 @@ class ListView(BaseView):
         return context
 
 # 詳細ページ表示クラス
+
+
 class DetailView(BaseView):
     template_name = 'PhoenixBlog/detail.html'
     model = Contents
@@ -52,7 +68,8 @@ class DetailView(BaseView):
         context['content'] = content
         # 記事
         # コンテンツに紐づく記事を取得
-        content_article_ids = ContentArticle.objects.filter(content=content.id).values_list('article', flat=True)
+        content_article_ids = ContentArticle.objects.filter(
+            content=content.id).values_list('article', flat=True)
         articles = Article.objects.filter(id__in=content_article_ids)
         context['articles'] = articles
         return context

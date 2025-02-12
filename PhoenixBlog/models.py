@@ -1,6 +1,16 @@
 from django.db import models
 from django.utils import timezone
 
+
+class PhoenixBlog(models.Model):
+    title = models.CharField(max_length=120)
+    description = models.TextField()
+    completed = models.BooleanField(default=False)
+
+    def _str_(self):
+        return self.title
+
+
 class Category(models.Model):
     category_name = models.CharField(max_length=255)
     parent_category = models.IntegerField(null=True)
@@ -9,6 +19,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.category_name
+
 
 class Contents(models.Model):
     title = models.CharField(max_length=255)
@@ -25,6 +36,7 @@ class Contents(models.Model):
         # 現在日時より過去の記事の中からランダムに10件を取得
         return self.objects.filter(updated_at__lte=timezone.now()).order_by('?')[:10]
 
+
 class Article(models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField()
@@ -35,11 +47,15 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+
 class ContentArticle(models.Model):
     content = models.IntegerField()
     article = models.IntegerField()
+
     class Meta:
         unique_together = ('content', 'article')
+
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
