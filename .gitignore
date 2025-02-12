@@ -1,7 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 PhoenixWeb/__pycache__/
-PhoenixBrog/__pycache__/
+PhoenixBlog/__pycache__/
 *.py[cod]
 *$py.class
 

@@ -1,0 +1,48 @@
+{% extends "PhoenixBlog/base.html" %}
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@9.1.1/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="{% static 'PhoenixBlog/css/index.css' %}" />
+{% endblock extra_css %}
+{% block content %}
+  {# おすすめ記事 #}
+  <h2>新着の投稿</h2>
+  <article>
+    <header>
+      <h3>{{ article.title }}</h3>
+      <p>投稿日: {{ article.created_at }} | カテゴリー: サンプル</p>
+    </header>
+    <p>
+      {{ article.body|truncatechars:210 }}<a href="{% url 'detail' content_id=article.id %}">続きを読む</a>
+    </p>
+  </article>
+  {# スワイパー一覧 #}
+  <h2>人気の記事</h2>
+  <div class="swiper-container-parent">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        {% for pop_article in list %}
+          <div class="swiper-slide">
+            <a href="{% url 'detail' content_id=pop_article.id %}">
+              <div class="card">
+                <div class="card-photo">
+                  <img src="https://picsum.photos/300/200"
+                       alt="Article 1"
+                       height="300"
+                       width="200" />
+                </div>
+                <div class="card-detail">
+                  <b>{{ pop_article.title|truncatechars:30 }}</b>
+                  <p>{{ pop_article.body|truncatechars:50 }}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+{% endblock content %}

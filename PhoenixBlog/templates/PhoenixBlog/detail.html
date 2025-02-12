@@ -1,0 +1,30 @@
+{% extends "PhoenixBlog/base.html" %}
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'PhoenixBlog/css/detail.css' %}" />
+{% endblock extra_css %}
+{% block content %}
+  <div class="content-photo">
+    <img src="https://picsum.photos/730/500"
+         alt="Article 1"
+         height="500"
+         width="730" />
+  </div>
+  <h2>{{ content.title }}</h2>
+  <p>{{ content.updated_at }}</p>
+  <p>{{ content.body }}</p>
+  <div class="content-table">
+    <b>目次</b>
+    <ul>
+      {% for article in articles %}
+        <li>
+          <a href="#{{ article.id }}">{{ article.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% for article in articles %}
+    <h3 id="{{ article.id }}">{{ article.title }}</h3>
+    <p>{{ article.body }}</p>
+  {% endfor %}
+{% endblock content %}
